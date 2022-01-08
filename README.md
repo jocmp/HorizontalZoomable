@@ -14,3 +14,4 @@ dependencies {
 }
 ```
 
+![Demo](https://github.com/jocmp/HorizontalZoomable/blob/59560eec653623f8534613e5b26bb35da8938cfd/demo.mp4)
