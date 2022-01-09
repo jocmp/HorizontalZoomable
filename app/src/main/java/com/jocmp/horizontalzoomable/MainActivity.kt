@@ -9,18 +9,16 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.jocmp.horizontalzoomable.ui.theme.HorizontalZoomableTheme
-import moe.tlaster.zoomable.Zoomable
-import moe.tlaster.zoomable.rememberZoomableState
+import com.mxalbert.zoomable.Zoomable
 
 class MainActivity : ComponentActivity() {
     @ExperimentalPagerApi
@@ -35,9 +33,12 @@ class MainActivity : ComponentActivity() {
                         R.drawable.jacob_van_ruisdael
                     )
                     Box {
-                        HorizontalPager(count = drawableIds.size) { page ->
+                        HorizontalPager(
+                            count = drawableIds.size,
+                            itemSpacing = 8.dp
+                        ) { page ->
                             val drawableId = drawableIds[page]
-                            Zoomable(state = rememberZoomableState()) {
+                            Zoomable {
                                 DrawableImage(drawableId = drawableId)
                             }
                         }

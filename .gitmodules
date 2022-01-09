@@ -1,0 +1,3 @@
+[submodule "Zoomable"]
+	path = Zoomable
+	url = git@github.com:jocmp/Zoomable.git
